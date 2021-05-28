@@ -1,4 +1,4 @@
-package lambdas;
+package paradigmafuncional;
 
 public class ParadigmaImperativo {
     public static void main(String[] args) {
