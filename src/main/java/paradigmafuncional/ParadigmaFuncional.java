@@ -14,6 +14,7 @@ public class ParadigmaFuncional {
         System.out.println("O resultado é:: " + resultado.apply(10));
     }
 
+    //Aula 2 - Composição de funções
     private static void deveMultiplicarPorDoisOsNumerosPares(){
         int[] valores = {1,2,3,4};
 
