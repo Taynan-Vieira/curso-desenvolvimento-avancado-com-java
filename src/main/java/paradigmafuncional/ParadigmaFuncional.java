@@ -1,12 +1,12 @@
 package paradigmafuncional;
 
 import java.util.Arrays;
+import java.util.function.BiPredicate;
 import java.util.function.UnaryOperator;
 
 public class ParadigmaFuncional {
     public static void main(String[] args) {
-//        calcularValorVezesTres();
-        deveMultiplicarPorDoisOsNumerosPares();
+        verificarSeNumeroEhMaior();
     }
 
     private static void calcularValorVezesTres() {
@@ -22,5 +22,12 @@ public class ParadigmaFuncional {
                 .filter(numero -> numero % 2 == 0)
                 .map(numero -> numero * 2)
                 .forEach(numero -> System.out.println(numero));
+    }
+
+    //Aula 2- Funções puras
+    private static void verificarSeNumeroEhMaior(){
+        BiPredicate<Integer, Integer> verificarSeEhMaior = (parametro, valorComparacao) -> parametro > valorComparacao;
+        System.out.println(verificarSeEhMaior.test(13, 12));
+        System.out.println(verificarSeEhMaior.test(13, 12));
     }
 }
