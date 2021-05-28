@@ -6,7 +6,7 @@ import java.util.function.UnaryOperator;
 
 public class ParadigmaFuncional {
     public static void main(String[] args) {
-        verificarSeNumeroEhMaior();
+        dobrarValor();
     }
 
     private static void calcularValorVezesTres() {
@@ -29,5 +29,13 @@ public class ParadigmaFuncional {
         BiPredicate<Integer, Integer> verificarSeEhMaior = (parametro, valorComparacao) -> parametro > valorComparacao;
         System.out.println(verificarSeEhMaior.test(13, 12));
         System.out.println(verificarSeEhMaior.test(13, 12));
+    }
+
+    //Aula 2 - Imutabilidade
+    private static void dobrarValor(){
+        int valor = 20;
+        UnaryOperator<Integer> valorDobrado = v -> v * 2;
+        System.out.println(valorDobrado.apply(valor));
+        System.out.println(valor);
     }
 }
