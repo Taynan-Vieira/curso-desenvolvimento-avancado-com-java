@@ -1,4 +1,4 @@
-package interfacesfuncionais;
+package interfacesfuncionais.aula2;
 
 public class FuncaoAltaOrdem {
 
