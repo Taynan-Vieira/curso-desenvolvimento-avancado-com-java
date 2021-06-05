@@ -1,4 +1,4 @@
-package function;
+package interfacesfuncionais.aula4;
 
 import java.util.function.Function;
 
