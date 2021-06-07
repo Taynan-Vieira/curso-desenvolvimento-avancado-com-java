@@ -1,6 +1,7 @@
 package interfacesfuncionais.aula5;
 
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -8,7 +9,17 @@ public class Iteracoes {
     public static void main(String[] args) {
         String[] nomes = {"João", "Paulo", "Oliveira", "Santos"};
         Integer[] numeros = {1, 2, 3, 4, 5};
-        imprimirNomeFiltrados(nomes);
+//        imprimirODobroDeCadaItemDaLista(numeros);
+
+        List<String> profissoes = new ArrayList<>();
+        profissoes.add("Desenvolvedor");
+        profissoes.add("Testador");
+        profissoes.add("Gerente de projeto");
+        profissoes.add("Gerente de qualidade");
+
+        profissoes.stream().filter(profissao -> profissao.startsWith("Gerente"))
+                .forEach(System.out::println);
+
     }
 
     public static void imprimirNomeFiltrados(String... nomes){
@@ -40,5 +51,7 @@ public class Iteracoes {
         for(Integer numero : numeros){
             System.out.println(numero*2);
         }
+        Stream.of(numeros).map(numero -> numero * 2)
+                          .forEach(System.out::println);
     }
 }
