@@ -8,14 +8,20 @@ import java.util.stream.Collectors;
 
 public class InferenciaExemplo {
     public static void main(String[] args) throws IOException {
-        printarNomeCompleto("Taynan", "Vieira");
+        connectedAndPrintUrlJavaOracle();
     }
 
     private static void connectedAndPrintUrlJavaOracle() throws IOException {
         var url = new URL("https://www.oracle.com/br/java/");
         var urlConnection = url.openConnection();
-        var bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-        System.out.println(bufferedReader.lines().collect(Collectors.joining()).replaceAll(">", ">\n"));
+
+        try( var bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()))){
+            System.out.println(bufferedReader.lines().collect(Collectors.joining()).replaceAll(">", ">\n"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
 
     }
 
